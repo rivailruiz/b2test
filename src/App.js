@@ -12,6 +12,9 @@ class App extends Component {
   }
 
 componentWillMount(){
+  this.getPlanets();
+}
+getPlanets(){
   const aleatorio = Math.floor(Math.random() * 7 + 1);
   axios.get('http://swapi.co/api/planets/?page='+aleatorio)
   .then(res => {
@@ -19,14 +22,19 @@ componentWillMount(){
     this.setState({lista: data})
     const item = data[Math.floor(Math.random()*data.length)]
     this.setState({item: item})
+    console.log(this.state.item)
   });
 }
   render() {
     return (
       <div className="App">
       <h1>Planeta:</h1>
-      <h3>{this.state.item.name}</h3>
-      <div id="planeta"></div>
+      <h3>Nome: {this.state.item.name}</h3>
+      <hr/>
+      <p>Polulation: {this.state.item.population} </p>
+      <p>Climate: {this.state.item.climate} </p>
+      <button onClick={this.getPlanets}>Proximo</button>
+
 
       </div>
     );
