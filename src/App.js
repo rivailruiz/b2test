@@ -28,12 +28,13 @@ getPlanets(){
   render() {
     return (
       <div className="App">
-      <h1>Planeta:</h1>
-      <h3>Nome: {this.state.item.name}</h3>
-      <hr/>
-      <p>Polulation: {this.state.item.population} </p>
-      <p>Climate: {this.state.item.climate} </p>
-      <button onClick={this.getPlanets}>Proximo</button>
+        <div className="App-header">
+          <h1>Planet:</h1>
+          <h3>Name: {this.state.item.name}</h3>
+        </div>
+        <p>Polulation: {this.state.item.population} </p>
+        <p>Climate: {this.state.item.climate} </p>
+        <button onClick={() => this.getPlanets() }>Proximo</button>
 
 
       </div>
