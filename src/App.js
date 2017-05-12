@@ -6,35 +6,27 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      lista: []
+      lista: [],
+      item: ''
     }
   }
-  //http://swapi.co/api/planets
-  componentDidMount(){
-    axios.get('http://swapi.co/api/planets')
+
+componentWillMount(){
+  const aleatorio = Math.floor(Math.random() * 7 + 1);
+  axios.get('http://swapi.co/api/planets/?page='+aleatorio)
   .then(res => {
     let data = res.data.results;
     this.setState({lista: data})
-    let item = data[Math.floor(Math.random()*data.length)]
-    console.log(item)
-
+    const item = data[Math.floor(Math.random()*data.length)]
+    this.setState({item: item})
   });
 }
   render() {
     return (
       <div className="App">
-      <h1>Planetas:</h1>
-        {this.state.lista.map((planeta) => {
-          return(
-            <div key={planeta.created}>
-              <div>
-                <h1>{planeta.name}</h1>
-              </div>
-            </div>
-          )
-        })}
-
-
+      <h1>Planeta:</h1>
+      <h3>{this.state.item.name}</h3>
+      <div id="planeta"></div>
 
       </div>
     );
