@@ -34,6 +34,7 @@ getPlanets(){
         </div>
         <p>Polulation: {this.state.item.population} </p>
         <p>Climate: {this.state.item.climate} </p>
+        <p>Terrain: {this.state.item.terrain} </p>
         <button onClick={() => this.getPlanets() }>Proximo</button>
 
 
