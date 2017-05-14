@@ -28,17 +28,18 @@ getPlanets(){
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <h1>Planet:</h1>
-          <h3>Name: {this.state.item.name}</h3>
+        <div className="card">
+        <div className="App-header"><h1>{this.state.item.name}</h1></div>
+
+          <div className="container">
+            <div className="row"><h4><b>Polulation: {this.state.item.population}</b></h4></div>
+            <div className="row"><h4><b>Climate: {this.state.item.climate}</b></h4></div>
+            <div className="row"><h4><b>Terrain: {this.state.item.terrain}</b></h4></div>
+          </div>
         </div>
-        <p>Polulation: {this.state.item.population} </p>
-        <p>Climate: {this.state.item.climate} </p>
-        <p>Terrain: {this.state.item.terrain} </p>
-        <button onClick={() => this.getPlanets() }>Proximo</button>
-
-
+        <div><button onClick={() => this.getPlanets() }>Proximo</button></div>
       </div>
+
     );
   }
 }
