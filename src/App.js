@@ -19,10 +19,11 @@ getPlanets(){
   axios.get('http://swapi.co/api/planets/?page='+aleatorio)
   .then(res => {
     let data = res.data.results;
-    this.setState({lista: data})
     const item = data[Math.floor(Math.random()*data.length)]
-    this.setState({item: item})
-    console.log(this.state.item)
+    this.setState({
+      lista: data,
+      item: item
+    })
   });
 }
   render() {
