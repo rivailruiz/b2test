@@ -1,3 +1,3 @@
-1 - Clonar o projeto.
-2 - npm install
-3 - npm start
+1 - Clonar o projeto. <br>
+2 - npm install . <br>
+3 - npm start <br>
